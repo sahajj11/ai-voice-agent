@@ -1,0 +1,82 @@
+import { Linkedin, CheckCircle2, Copy } from "lucide-react";
+import { Area, AreaChart, ResponsiveContainer, YAxis } from "recharts";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+const sentimentData = [
+  { time: 0, val: 2 }, { time: 10, val: 3 }, { time: 15, val: 4.5 },
+  { time: 20, val: 4.2 }, { time: 25, val: 3.8 }, { time: 30, val: 4 }
+];
+
+export default function CandidateTestimonial() {
+  return (
+    <div className="min-h-screen bg-zinc-950 text-white flex items-center justify-center p-6">
+      <Card className="max-w-4xl w-full bg-white text-black p-4">
+        <header className="mb-6 flex justify-between items-start">
+           <div>
+             <h1 className="text-3xl font-bold">Candidate Testimonial</h1>
+             <p className="text-xl font-semibold mt-1">Jane Doe</p>
+             <p className="text-zinc-500">Senior AI Engineer</p>
+           </div>
+           <div className="flex items-center gap-2 text-[#2dd4bf]">
+             <Mic className="size-6" /> <span className="font-bold">AI-HIRE</span>
+           </div>
+        </header>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Score Card */}
+          <div className="bg-zinc-900 text-white rounded-xl p-6 flex flex-col items-center justify-center">
+            <h3 className="text-sm font-medium mb-4">Overall Interview Score</h3>
+            <div className="relative size-32">
+              <svg className="size-full" viewBox="0 0 36 36">
+                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#2dd4bf" strokeWidth="2.5" strokeDasharray="90, 100" />
+              </svg>
+              <div className="absolute inset-0 flex items-center justify-center text-2xl font-bold italic">4.5/5.0</div>
+            </div>
+          </div>
+
+          {/* Strengths */}
+          <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-6">
+             <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider">Key Strengths</h3>
+             <ul className="space-y-3">
+               {["Deep technical knowledge", "Clear communication", "Problem-solving skills"].map((s) => (
+                 <li key={s} className="flex items-center gap-2 text-sm"><CheckCircle2 className="size-4 text-green-500" /> {s}</li>
+               ))}
+             </ul>
+          </div>
+
+          {/* Analytics */}
+          <div className="bg-zinc-900 text-white rounded-xl p-4">
+             <h3 className="text-xs font-semibold mb-2">Sentiment Trend</h3>
+             <div className="h-24 w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={sentimentData}>
+                    <Area type="monotone" dataKey="val" stroke="#2dd4bf" fill="#2dd4bf" fillOpacity={0.2} />
+                  </AreaChart>
+                </ResponsiveContainer>
+             </div>
+             <h3 className="text-xs font-semibold mt-4 mb-2">Talk-to-Listen Ratio</h3>
+             <div className="flex gap-1 items-end h-16">
+                {[40, 60, 30, 80, 50, 90].map((h, i) => (
+                  <div key={i} style={{ height: `${h}%` }} className={`flex-1 rounded-sm ${i > 3 ? 'bg-[#2dd4bf]' : 'bg-zinc-700'}`} />
+                ))}
+             </div>
+          </div>
+
+          {/* Narrative Summary */}
+          <div className="md:col-span-3 bg-zinc-900 text-white p-6 rounded-xl relative overflow-hidden">
+             <span className="text-6xl text-[#2dd4bf] absolute -top-2 left-2 opacity-50 font-serif">“</span>
+             <h3 className="text-[#2dd4bf] font-semibold mb-4 relative z-10">AI-Generated Narrative Summary</h3>
+             <p className="text-sm text-zinc-300 leading-relaxed relative z-10">
+               Jane is a highly capable engineer with deep understanding of AI/ML concepts... She demonstrated strong problem-solving skills when conducting complex technical challenges.
+             </p>
+          </div>
+        </div>
+
+        <div className="mt-8 flex gap-4">
+           <Button className="bg-[#2dd4bf] hover:bg-[#26b2a1] text-black font-bold flex gap-2"><Copy className="size-4" /> Copy Text</Button>
+           <Button className="bg-black text-white hover:bg-zinc-800 flex gap-2"><Linkedin className="size-4" /> Share to LinkedIn</Button>
+        </div>
+      </Card>
+    </div>
+  );
+}
