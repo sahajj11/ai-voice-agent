@@ -38,7 +38,7 @@ export default function Dashboard() {
           <CardHeader className="pb-2">
             <div className="flex justify-between items-start">
               <div>
-                <h2 className="text-2xl font-semibold">Jane Doe</h2>
+                <h2 className="text-2xl font-semibold">Mark Zuck</h2>
                 <p className="text-zinc-400 text-sm">Senior AI Engineer</p>
               </div>
               <Button variant="ghost" size="icon" className="text-zinc-400">...</Button>
