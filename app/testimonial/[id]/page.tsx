@@ -65,9 +65,9 @@ export default function TestimonialPage() {
                 Interview Completed
               </Badge>
               <h1 className="text-4xl font-bold">{data?.candidate_name}</h1>
-              <p className="text-zinc-400 text-lg flex items-center gap-2">
+              {/* <p className="text-zinc-400 text-lg flex items-center gap-2">
                 Candidate for <span className="text-white underline decoration-[#2dd4bf] underline-offset-4">{data?.candidate_role}</span>
-              </p>
+              </p> */}
             </div>
 
             <div className="bg-[#141414] p-6 rounded-2xl border border-zinc-800 flex items-center gap-6">

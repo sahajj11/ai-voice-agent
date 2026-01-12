@@ -123,3 +123,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* In your globals.css */
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+textarea::-webkit-scrollbar-thumb {
+  background-color: #3f3f46; /* zinc-700 */
+  border-radius: 10px;
+}
+textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+

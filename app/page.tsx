@@ -39,7 +39,7 @@ export default function Dashboard() {
            <div className="w-8 h-8 bg-[#2dd4bf] rounded-full flex items-center justify-center">
               <Mic className="size-4 text-black" />
            </div>
-           <h1 className="text-xl font-bold tracking-tight">AI-HIRE</h1>
+           <h1 className="text-xl font-bold tracking-tight">AI-ORALS</h1>
          </div>
          {/* <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon"><Search className="size-5" /></Button>
@@ -54,7 +54,7 @@ export default function Dashboard() {
             <div className="flex justify-between items-start">
               <div>
                 <h2 className="text-2xl font-semibold">Mark Zuck</h2>
-                <p className="text-zinc-400 text-sm">AI Interviewer</p>
+                <p className="text-zinc-400 text-sm">AI Teacher</p>
               </div>
             </div>
           </CardHeader>
@@ -65,7 +65,7 @@ export default function Dashboard() {
                 <Mic className="size-16 text-[#2dd4bf]" />
               </div>
             </div>
-            <h3 className="text-xl font-medium">Conduct New Interview</h3>
+            <h3 className="text-xl font-medium">Conduct New Oral Exam</h3>
             <Button 
               onClick={() => router.push('/create')}
               className="cursor-pointer bg-[#2dd4bf] hover:bg-[#26b2a1] text-black font-semibold px-8 rounded-full flex gap-2"
@@ -78,11 +78,11 @@ export default function Dashboard() {
         {/* Right Card: Dynamic Completed Interviews */}
         <Card className="bg-[#141414] border-none text-white shadow-2xl">
           <CardHeader>
-            <CardTitle>Completed Interviews</CardTitle>
+            <CardTitle>Completed Oral Exams</CardTitle>
             <div className="relative mt-2">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-zinc-500" />
               <input 
-                placeholder="Search candidates..." 
+                placeholder="Search students..." 
                 className="w-full bg-[#1a1a1a] border-none rounded-md py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-[#2dd4bf] outline-none text-white"
               />
             </div>

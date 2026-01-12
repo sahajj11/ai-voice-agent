@@ -143,8 +143,8 @@ export default function InterviewRoom() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white p-6">
       <div className="max-w-4xl mx-auto">
-        <Button variant="ghost" onClick={() => router.back()} className="mb-8 text-zinc-400 hover:text-white transition-colors">
-          <ChevronLeft className="mr-2 size-4" /> Cancel Interview
+        <Button variant="ghost" onClick={() => router.back()} className="mb-8 cursor-pointer text-zinc-400 hover:text-black transition-colors">
+          <ChevronLeft className="mr-2  size-4" /> Cancel Oral Exam
         </Button>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -156,14 +156,14 @@ export default function InterviewRoom() {
                   <User className="text-[#2dd4bf] size-10" />
                 </div>
                 <h2 className="text-xl font-bold">{candidate?.candidate_name || "Unknown Candidate"}</h2>
-                <div className="flex items-center gap-2 text-zinc-400 text-sm mt-1">
+                {/* <div className="flex items-center gap-2 text-zinc-400 text-sm mt-1">
                   <Briefcase className="size-3" /> {candidate?.candidate_role || "Role not specified"}
-                </div>
+                </div> */}
               </CardContent>
             </Card>
             
             <div className="p-4 rounded-xl border border-dashed border-zinc-800">
-              <p className="text-xs text-zinc-500 uppercase font-bold mb-2">Interview Context</p>
+              <p className="text-xs text-zinc-500 uppercase font-bold mb-2">Oral Exam Context</p>
               <p className="text-xs text-zinc-400 line-clamp-6 leading-relaxed">
                 {candidate?.resume_text || "No resume context available."}
               </p>
@@ -193,7 +193,7 @@ export default function InterviewRoom() {
               onClick={handleCall}
               className={`h-16 px-12 cursor-pointer rounded-full text-lg font-bold transition-all ${isCalling ? 'bg-red-500 hover:bg-red-600 text-white' : 'bg-[#2dd4bf] hover:bg-[#26b2a1] text-black'}`}
             >
-              {isCalling ? <><MicOff className="mr-2 " /> End Interview</> : "Start Voice Interview"}
+              {isCalling ? <><MicOff className="mr-2 " /> End Interview</> : "Start Oral Exam"}
             </Button>
           </div>
         </div>
