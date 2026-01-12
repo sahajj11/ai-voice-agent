@@ -191,9 +191,9 @@ export default function InterviewRoom() {
 
             <Button 
               onClick={handleCall}
-              className={`h-16 px-12 rounded-full text-lg font-bold transition-all ${isCalling ? 'bg-red-500 hover:bg-red-600 text-white' : 'bg-[#2dd4bf] hover:bg-[#26b2a1] text-black'}`}
+              className={`h-16 px-12 cursor-pointer rounded-full text-lg font-bold transition-all ${isCalling ? 'bg-red-500 hover:bg-red-600 text-white' : 'bg-[#2dd4bf] hover:bg-[#26b2a1] text-black'}`}
             >
-              {isCalling ? <><MicOff className="mr-2" /> End Interview</> : "Start Voice Interview"}
+              {isCalling ? <><MicOff className="mr-2 " /> End Interview</> : "Start Voice Interview"}
             </Button>
           </div>
         </div>

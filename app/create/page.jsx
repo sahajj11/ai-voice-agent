@@ -64,9 +64,9 @@ export default function CreateInterview() {
         <Button 
           variant="ghost" 
           onClick={() => router.back()} 
-          className="text-zinc-400 hover:text-white p-0 flex gap-2"
+          className="text-zinc-400 hover:text-black cursor-pointer p-0 flex gap-2"
         >
-          <ChevronLeft className="size-4" /> Back to Dashboard
+          <ChevronLeft className="size-4 hover:text-black" /> Back to Dashboard
         </Button>
       </div>
 
@@ -129,7 +129,7 @@ export default function CreateInterview() {
               <div className="pt-4">
                 <Button 
                   onClick={handleStart}
-                  className="w-full bg-[#2dd4bf] hover:bg-[#26b2a1] text-black font-bold h-12 rounded-lg"
+                  className="cursor-pointer w-full bg-[#2dd4bf] hover:bg-[#26b2a1] text-black font-bold h-12 rounded-lg"
                   disabled={loading}
                 >
                   {loading ? (
@@ -168,7 +168,7 @@ export default function CreateInterview() {
             </CardContent>
           </Card>
 
-          <div className="p-6 border border-dashed border-zinc-800 rounded-xl flex flex-col items-center justify-center text-center space-y-3">
+          {/* <div className="p-6 border border-dashed border-zinc-800 rounded-xl flex flex-col items-center justify-center text-center space-y-3">
              <div className="size-12 rounded-full bg-zinc-900 flex items-center justify-center">
                 <Upload className="size-5 text-zinc-500" />
              </div>
@@ -176,7 +176,7 @@ export default function CreateInterview() {
                <p className="text-sm font-medium">Quick Upload</p>
                <p className="text-xs text-zinc-500">Upload PDF resume directly (coming soon)</p>
              </div>
-          </div>
+          </div> */}
         </div>
       </main>
     </div>

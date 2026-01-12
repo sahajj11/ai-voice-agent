@@ -47,14 +47,14 @@ export default function TestimonialPage() {
         <div className="flex items-center justify-between mb-8">
           <Button 
             variant="ghost" 
-            onClick={() => router.push('/dashboard')} 
-            className="text-zinc-400 hover:text-white flex gap-2 p-0"
+            onClick={() => router.push('/')} 
+            className="text-zinc-400 hover:text-black flex gap-2 p-0 cursor-pointer"
           >
             <ChevronLeft className="size-4" /> Back to Dashboard
           </Button>
-          <Button className="bg-[#2dd4bf] hover:bg-[#26b2a1] text-black font-semibold flex gap-2">
+          {/* <Button className="bg-[#2dd4bf] hover:bg-[#26b2a1] text-black font-semibold flex gap-2">
             <Download className="size-4" /> Export Report
-          </Button>
+          </Button> */}
         </div>
 
         <main className="space-y-8">
