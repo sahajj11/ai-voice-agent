@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎙️ AI-Hire: Voice-Powered AI Interviewer
 
-## Getting Started
+AI-Hire is a full-stack platform that automates the initial screening process using Voice AI. It conducts real-time technical interviews, analyzes candidate responses, and generates automated testimonials and scores using a custom Webhook architecture.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Real-time Voice Interviews:** Integrated with **Vapi.ai** for natural, low-latency voice conversations.
+- **Context-Aware AI:** The AI recruiter "reads" the candidate's resume (stored in Supabase) to ask relevant technical questions.
+- **Automated Evaluation:** Uses AI to generate a testimonial summary and a technical score (1-5) based on the conversation.
+- **Live Transcripts:** Capture word-for-word transcripts of every session.
+- **Candidate Dashboard:** A sleek, dark-themed UI to manage and review completed interviews.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend:** Next.js 14, Tailwind CSS, Lucide React, Shadcn UI
+- **Backend:** Next.js API Routes (Serverless Functions)
+- **Database:** Supabase (PostgreSQL)
+- **Voice AI:** Vapi.ai (using GPT-4o)
+- **Tunneling:** Ngrok (for local webhook testing)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗️ Architecture Flow
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Setup:** Candidate info and resume text are saved to **Supabase**.
+2. **The Call:** The Next.js frontend triggers a Vapi call, passing the Supabase `ID` as a variable.
+3. **The Webhook:** Upon hanging up, Vapi sends an `end-of-call-report` to the `/api/webhook` route.
+4. **Data Sync:** The webhook extracts the AI summary and transcript, updating the corresponding row in Supabase via the unique `ID`.
