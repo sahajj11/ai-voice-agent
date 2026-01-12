@@ -167,6 +167,7 @@ export default function InterviewRoom() {
               <p className="text-xs text-zinc-400 line-clamp-6 leading-relaxed">
                 {candidate?.resume_text || "No resume context available."}
               </p>
+              <p></p>
             </div>
           </div>
 
