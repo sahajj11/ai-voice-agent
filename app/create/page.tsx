@@ -1050,15 +1050,43 @@ export default function CreateInterview() {
           </div>
 
           <div className="lg:col-span-2 space-y-6">
-            <Card className="bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-zinc-800 text-white border-none shadow-xl">
-              <CardHeader><CardTitle className="text-sm font-semibold tracking-widest text-[#2dd4bf]">Process</CardTitle></CardHeader>
-              <CardContent className="space-y-4 text-sm text-zinc-300">
-                <p>1. AI parses documents to map knowledge.</p>
-                <p>2. Agent builds a questioning strategy.</p>
-                <p>3. Start the voice call immediately.</p>
+            <Card className="bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-zinc-800 text-white overflow-hidden relative border-none shadow-xl">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                  <Sparkles className="size-20 text-[#2dd4bf]" />
+              </div>
+              <CardHeader>
+                <CardTitle className="text-sm font-semibold uppercase tracking-widest text-[#2dd4bf]">How it works</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="size-8 rounded-full bg-[#2dd4bf]/10 text-[#2dd4bf] flex items-center justify-center shrink-0 text-xs font-bold">1</div>
+                  <p className="text-sm text-zinc-300 font-light leading-relaxed">AI parses your documents to map out core concepts and technical knowledge.</p>
+                </div>
+                <div className="flex gap-4">
+                  <div className="size-8 rounded-full bg-[#2dd4bf]/10 text-[#2dd4bf] flex items-center justify-center shrink-0 text-xs font-bold">2</div>
+                   <p className="text-sm text-zinc-300 font-light leading-relaxed">The agent builds a customized, deep-dive questioning strategy.</p>
+                 </div>
+                 <div className="flex gap-4">
+                   <div className="size-8 rounded-full bg-[#2dd4bf]/10 text-[#2dd4bf] flex items-center justify-center shrink-0 text-xs font-bold">3</div>
+                   <p className="text-sm text-zinc-300 font-light leading-relaxed">You can start the voice call immediately after initialization.</p>
+                 </div>
               </CardContent>
             </Card>
+
+            <div className="p-8 border border-dashed border-zinc-800 rounded-xl flex flex-col items-center justify-center text-center space-y-4">
+                <div className="size-12 rounded-full bg-zinc-900 flex items-center justify-center shadow-inner">
+                  <FileText className="size-5 text-zinc-500" />
+             </div>
+               <div>
+                 <p className="text-sm font-medium">Auto-Parsing Enabled</p>
+                 <p className="text-xs text-zinc-500 max-w-[180px] mx-auto">We use OCR to extract text directly from your uploaded PDF.</p>
+                </div>
+           </div>
+
+            
           </div>
+
+          
         </main>
       </div>
     </div>
