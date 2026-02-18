@@ -1,6 +1,6 @@
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
+import Navbar from "../../components/ui/Navbar"
 import Hero from "@/components/ui/Hero";
+import Footer from "../../components/ui/Footer"
 
 export default function LandingPage() {
   return (
@@ -9,7 +9,7 @@ export default function LandingPage() {
       <Navbar />
 
       {/* 2. The Main Content */}
-      <main className="flex-grow pt-20">
+      <main className="flex-grow">
         {/* The Hero usually takes up the full viewport height */}
         <Hero />
         
