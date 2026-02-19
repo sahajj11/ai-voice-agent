@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { UserCircle } from 'lucide-react';
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"; //
 
 export default function Navbar() {
   return (
@@ -16,7 +17,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Center: Navigation Links (Hidden on Mobile) */}
+        {/* Center: Navigation Links */}
         <div className="hidden lg:flex items-center gap-10 text-[13px] font-medium tracking-wide text-zinc-400">
           <Link href="#features" className="hover:text-[#2dd4bf] transition-colors relative group">
             Features
@@ -34,20 +35,24 @@ export default function Navbar() {
 
         {/* Right: Auth Buttons */}
         <div className="flex items-center gap-4">
-          <Link 
-            href="/login" 
-            className="hidden sm:flex items-center gap-2 text-sm font-medium text-zinc-300 hover:text-white transition-colors px-4 py-2"
-          >
-            <UserCircle className="size-4" />
-            Log in
-          </Link>
+          <SignedOut>
+            {/* Swapped SignInButton for a direct Link to our /login page */}
+           
+            
+            <Link 
+              href="/login" 
+              className="px-6 py-2.5 bg-white text-black text-sm font-bold rounded-full hover:bg-[#2dd4bf] hover:text-black transition-all shadow-lg active:scale-95"
+            >
+              Sign In / Sign Up
+            </Link>
+          </SignedOut>
           
-          <Link 
-            href="/signup" 
-            className="px-6 py-2.5 bg-white text-black text-sm font-bold rounded-full hover:bg-[#2dd4bf] hover:text-black transition-all shadow-lg active:scale-95"
-          >
-            Sign up free
-          </Link>
+          <SignedIn>
+            <Link href="/dashboard" className="text-sm font-medium text-zinc-400 hover:text-[#2dd4bf] mr-4">
+              Dashboard
+            </Link>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
         </div>
 
       </div>
