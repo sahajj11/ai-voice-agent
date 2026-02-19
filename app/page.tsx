@@ -1,6 +1,9 @@
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import Hero from "@/components/ui/Hero";
+import Features from "@/components/landing/Features";
+import Methodology from "@/components/landing/Methodology";
+import Pricing from "@/components/landing/Pricing";
 
 export default function LandingPage() {
   return (
@@ -14,9 +17,17 @@ export default function LandingPage() {
         <Hero />
         
         {/* Features section added below to explain the "Probing" logic */}
-        {/* <section className="py-20">
+        <section className="py-20">
           <Features />
-        </section> */}
+        </section>
+
+        <section className="py-20">
+          <Methodology />
+        </section>
+
+        <section className="py-20">
+          <Pricing />
+        </section>
       </main>
 
       {/* 3. The Footer */}
