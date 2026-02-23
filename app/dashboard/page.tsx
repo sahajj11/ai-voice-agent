@@ -9,6 +9,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/services/supabaseClient"; // 2. Adjust path to your client
+import Navbar from "@/components/ui/Navbar";
+import DashboardNavbar from "@/components/ui/DashboardNavbar";
 
 export default function Dashboard() {
   const router = useRouter();
@@ -33,22 +35,13 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white p-8">
+    <div className="min-h-screen bg-[#0a0a0a] text-white p-8 pt-28">
       {/* Header stays the same... */}
-      <header className="flex justify-between items-center mb-8">
-         <div className="flex items-center gap-2">
-           <div className="w-8 h-8 bg-[#2dd4bf] rounded-full flex items-center justify-center">
-              <Mic className="size-4 text-black" />
-           </div>
-           <h1 className="text-xl font-bold tracking-tight">AI-ORALS</h1>
-         </div>
-         {/* <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon"><Search className="size-5" /></Button>
-            <Avatar className="size-8"><AvatarImage src="/pfp.png" /></Avatar>
-         </div> */}
-      </header>
 
-      <main className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <DashboardNavbar />
+    
+
+      <main className="grid grid-cols-1 mt-4 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {/* Left Card: Start Interview */}
         <Card className="bg-[#141414] border-none text-white shadow-2xl">
           <CardHeader className="pb-2">
